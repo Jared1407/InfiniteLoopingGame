@@ -10,6 +10,6 @@ config_version=5
 
 [application]
 
-config/name="Infinite Looping Game"
+config/name="Defend The Bottom Line"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
