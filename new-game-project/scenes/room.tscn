@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx376qv2yibpp"]
+
+[ext_resource type="Script" uid="uid://buybudt4ig73l" path="res://scripts/room.gd" id="1_36trf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_f1tnb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36trf"]
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_36trf")
+
+[node name="RoomArt" type="Sprite2D" parent="."]
+scale = Vector2(150, 50)
+texture = SubResource("CanvasTexture_f1tnb")
+
+[node name="FloorCollisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorCollisions"]
+scale = Vector2(7.5, 2.5)
+shape = SubResource("RectangleShape2D_36trf")
