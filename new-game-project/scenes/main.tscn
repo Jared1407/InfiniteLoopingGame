@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ux6tevstjg7q"]
+
+[node name="Main" type="Node"]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Tilemap" type="Node" parent="."]
+
+[node name="Rooms" type="Node" parent="."]
+
+[node name="Menus" type="Node" parent="."]
