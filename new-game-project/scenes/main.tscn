@@ -116,16 +116,15 @@ text = "Remove Room
 icon = ExtResource("3_sugp2")
 
 [node name="Panel" type="Panel" parent="Menus"]
-visible = false
 anchors_preset = -1
-anchor_left = -0.678
-anchor_top = -0.915
-anchor_right = -0.678
-anchor_bottom = -0.915
-offset_left = -111.944
-offset_top = -73.08
-offset_right = 374.056
-offset_bottom = 227.92
+anchor_left = -0.4
+anchor_top = -0.6
+anchor_right = -0.4
+anchor_bottom = -0.3
+offset_left = -243.272
+offset_top = -150.192
+offset_right = 356.728
+offset_bottom = 249.808
 
 [node name="UpgradeTitle" type="Label" parent="Menus/Panel"]
 layout_mode = 1
@@ -155,14 +154,14 @@ offset_bottom = 11.502
 [node name="Buy" type="Button" parent="Menus/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -222.0
-offset_top = -76.0
-offset_right = -58.0
-offset_bottom = -10.0
+anchor_left = 0.255
+anchor_top = 0.929
+anchor_right = 0.255
+anchor_bottom = 0.929
+offset_left = -82.928
+offset_top = -33.2056
+offset_right = 83.162
+offset_bottom = 32.7944
 text = "BUY
 "
 
@@ -173,10 +172,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -210.0
-offset_top = -78.0
-offset_right = -7.0
-offset_bottom = -9.0
+offset_left = -215.0
+offset_top = -75.4
+offset_right = -17.0
+offset_bottom = -6.40002
 text = "CANCEL"
 
 [node name="RoomOptions" type="HBoxContainer" parent="Menus/Panel"]

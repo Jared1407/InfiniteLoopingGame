@@ -30,6 +30,37 @@ func _ready() -> void:
 	
 	#When the game starts we start with 1 floor populated with the base rooms:
 	tower.add_floor()
+	
+	# Connect shop menu items
+	buy.pressed.connect(_on_buy_pressed)
+	cancel.pressed.connect(_on_cancel_pressed)
+	
+	# Hide Buttons until the shop "opens"
+	panel.visible = false
+	show_round_shop()
+	
+#Function for end of round:
+func show_round_shop() -> void:
+	var children = room_options.get_children()
+	for i in children:
+		room_options.remove_child(i)
+		
+	
+	panel.visible = true
+	chosen_scene = null
+	chosen_slot = -1
+	buy.disabled = true
+	
+	# For now pick 1 random room scene
+	var pool = get_node("GameManager").upgrade_defs.duplicate()
+	print(pool)
+	
+	
+func _on_cancel_pressed() -> void:
+	pass
+	
+func _on_buy_pressed() -> void:
+	pass
 
 func _on_add_room_pressed() -> void:
 	if tower.floors.is_empty():
