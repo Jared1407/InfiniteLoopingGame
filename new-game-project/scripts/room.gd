@@ -12,6 +12,10 @@ func _ready() -> void:
 	rectangle.size = Vector2((get_node("RoomArt").texture.get_width()),(get_node("RoomArt").texture.get_height()))
 	collision_shape_2d.shape = rectangle
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 328e7f0811760a4a6c64e8fb643a9c6e696ef27d
 	pass # Replace with function body.
 
 # The art/texture will decide h/w
@@ -20,6 +24,11 @@ func get_width() -> float:
 
 func get_height() -> float:
 	return get_node("RoomArt").texture.get_height()
+
+func _gui_input(event) -> void:
+	# Handle click event:
+	print(event)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
