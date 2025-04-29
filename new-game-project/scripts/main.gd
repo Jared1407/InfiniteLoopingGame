@@ -37,7 +37,7 @@ func _ready() -> void:
 	
 	# Hide Buttons until the shop "opens"
 	panel.visible = false
-	show_round_shop()
+	#show_round_shop()
 	
 #Function for end of round:
 func show_round_shop() -> void:
