@@ -8,7 +8,12 @@ class Upgrade:
 	var cost: int
 	var name: String
 
-@export var upgrade_defs: Array[Resource]
+#Possible shop items:
+@export var upgrade_defs = [
+	preload("res://scenes/damage_room.tscn"),
+	preload("res://scenes/slow_room.tscn")
+	]
+	
 @export var base_room: PackedScene
 
 # Called when the node enters the scene tree for the first time.

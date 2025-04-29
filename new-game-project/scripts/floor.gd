@@ -55,6 +55,19 @@ func setup_portals() -> void:
 	$LeftPortal.position = Vector2(0 - total_width/6 , 0)
 	$RightPortal.position = Vector2(total_width - total_width/6, 0)
 	
+func replace_room(slot_index: int, new_scene: PackedScene) -> void:
+	if slot_index < 0 or slot_index >= rooms.size():
+		return
+	# Delete old room:
+	var old = rooms[slot_index]
+	rooms.remove_at(slot_index)
+	old.queue_free()
+	
+	#replace with new:
+	var room = new_scene.instantiate() as Room
+	$rooms.add_child(room)
+	rooms.insert(slot_index,room)
+	reposition_rooms()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

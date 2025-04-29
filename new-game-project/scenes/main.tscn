@@ -127,7 +127,7 @@ offset_top = -73.08
 offset_right = 374.056
 offset_bottom = 227.92
 
-[node name="Name" type="Label" parent="Menus/Panel"]
+[node name="UpgradeTitle" type="Label" parent="Menus/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.814
@@ -179,7 +179,10 @@ offset_right = -7.0
 offset_bottom = -9.0
 text = "CANCEL"
 
-[node name="Preview" type="Sprite2D" parent="Menus/Panel"]
+[node name="RoomOptions" type="HBoxContainer" parent="Menus/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-43, -503)

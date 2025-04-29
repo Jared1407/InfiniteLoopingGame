@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://qk7tghvqifmw"]
+
+[ext_resource type="Script" uid="uid://b1c6matma6154" path="res://scripts/damage_room.gd" id="1_4sc0a"]
+[ext_resource type="Texture2D" uid="uid://bjn1lpnfbsq2e" path="res://assets/TempFloor.png.png" id="2_as120"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36trf"]
+
+[node name="DamageRoom" type="Node2D"]
+script = ExtResource("1_4sc0a")
+
+[node name="RoomArt" type="Sprite2D" parent="."]
+texture = ExtResource("2_as120")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_36trf")
