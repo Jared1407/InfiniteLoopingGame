@@ -27,7 +27,7 @@ func add_room(slot_index: int) -> void:
 		
 	# Create a variable that represents a new room scene
 	var room = room_scene.instantiate() as Room
-	room.position = Vector2(slot_index * 200, 0)
+	room.position = Vector2(slot_index * room.get_width(), 0)
 	# Put the rooms under the 'rooms' node
 	$rooms.add_child(room)
 	# Add these rooms to the array created earlier
@@ -46,12 +46,14 @@ func remove_room(slot_index: int) -> void:
 
 func reposition_rooms() -> void:
 	for i in range(rooms.size()):
-		rooms[i].position = Vector2(i * 50,0)
+		rooms[i].position = Vector2(i * rooms[i].get_width(),0)
 		
 func setup_portals() -> void:
 	var total_width = MAX_ROOMS * $rooms.get_child(0).get_width()
-	$LeftPortal.position = Vector2(0, 0)
-	$RightPortal.position = Vector2(total_width, 0)
+	# Since A sprite's middle is placed on zero zero, half of it is .5 * rooms.get_width,
+	# total_width is 3 * get width, so we ofset by .5 * total_width/3 or total/6
+	$LeftPortal.position = Vector2(0 - total_width/6 , 0)
+	$RightPortal.position = Vector2(total_width - total_width/6, 0)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

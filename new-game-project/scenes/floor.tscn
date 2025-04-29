@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://db12myw57coex"]
+[gd_scene load_steps=5 format=3 uid="uid://db12myw57coex"]
 
 [ext_resource type="Script" uid="uid://bp3drxv6t05k5" path="res://scripts/floor.gd" id="1_ukw5w"]
+[ext_resource type="Texture2D" uid="uid://b2qn41dv5fy2k" path="res://assets/Temp-Portal.png" id="2_kuqtn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kuqtn"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_kuqtn"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_whr1e"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_ukw5w"]
 
 [node name="floor" type="Node2D"]
 script = ExtResource("1_ukw5w")
@@ -20,29 +17,20 @@ position = Vector2(1, -30)
 position = Vector2(-353, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPortal"]
-position = Vector2(33, 1)
 shape = SubResource("CapsuleShape2D_kuqtn")
 
 [node name="Sprite2D" type="Sprite2D" parent="LeftPortal"]
 modulate = Color(0.28194, 0.285701, 1, 1)
-position = Vector2(36, 1.5)
-scale = Vector2(26, 61)
-texture = SubResource("CanvasTexture_kuqtn")
+position = Vector2(1, -30)
+texture = ExtResource("2_kuqtn")
 
 [node name="RightPortal" type="Area2D" parent="."]
 position = Vector2(286, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightPortal"]
-position = Vector2(30, 12)
+position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_whr1e")
 
 [node name="Sprite2D" type="Sprite2D" parent="RightPortal"]
-position = Vector2(30.5, 16.5)
-scale = Vector2(29, 63)
-texture = SubResource("CanvasTexture_kuqtn")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.815686, 0.0235294, 0.0235294, 1)
-show_behind_parent = true
-scale = Vector2(634.5, 136.5)
-texture = SubResource("CanvasTexture_ukw5w")
+position = Vector2(0, -30)
+texture = ExtResource("2_kuqtn")
