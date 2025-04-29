@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ux6tevstjg7q"]
+[gd_scene load_steps=5 format=3 uid="uid://ux6tevstjg7q"]
 
 [ext_resource type="Script" uid="uid://bq1yrg70syemv" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://do457oug3k5by" path="res://scenes/tower.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://b878aoalaeq3g" path="res://icon.svg" id="3_sugp2"]
 
 [sub_resource type="TileSet" id="TileSet_sgp6g"]
 
@@ -20,3 +21,46 @@ tile_set = SubResource("TileSet_sgp6g")
 [node name="tower" parent="TowerBase" instance=ExtResource("1_o5qli")]
 
 [node name="Menus" type="Node" parent="."]
+
+[node name="Buttons" type="Node" parent="Menus"]
+
+[node name="AddFloor" type="Button" parent="Menus/Buttons"]
+offset_left = -599.0
+offset_top = -970.0
+offset_right = -384.0
+offset_bottom = -834.0
+action_mode = 0
+text = "Add Floor"
+icon = ExtResource("3_sugp2")
+
+[node name="AddRoom" type="Button" parent="Menus/Buttons"]
+offset_left = -604.0
+offset_top = -824.0
+offset_right = -384.0
+offset_bottom = -688.0
+action_mode = 0
+text = "Add Room"
+icon = ExtResource("3_sugp2")
+
+[node name="RemoveFloor" type="Button" parent="Menus/Buttons"]
+offset_left = -895.0
+offset_top = -826.0
+offset_right = -649.0
+offset_bottom = -690.0
+action_mode = 0
+text = "Remove Floor"
+icon = ExtResource("3_sugp2")
+
+[node name="RemoveRoom" type="Button" parent="Menus/Buttons"]
+offset_left = -890.0
+offset_top = -978.0
+offset_right = -619.0
+offset_bottom = -842.0
+action_mode = 0
+text = "Remove Room
+"
+icon = ExtResource("3_sugp2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-5, -482)
+zoom = Vector2(0.64, 0.64)

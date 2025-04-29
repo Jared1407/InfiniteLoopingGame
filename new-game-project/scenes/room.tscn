@@ -7,6 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36trf"]
 
 [node name="Room" type="Node2D"]
+position = Vector2(-150, 0)
 script = ExtResource("1_36trf")
 
 [node name="RoomArt" type="Sprite2D" parent="."]

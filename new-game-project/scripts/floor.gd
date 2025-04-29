@@ -2,7 +2,7 @@ extends Node2D
 class_name Floor
 
 # Exports
-@export var room_scene: PackedScene
+@export var room_scene: PackedScene = preload("res://scenes/room.tscn")
 
 # Constants
 const MAX_ROOMS := 3
@@ -13,7 +13,8 @@ var rooms: Array[Room] = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	populate_rooms()
-	pass # Replace with function body.
+	setup_portals()
+
 
 func populate_rooms():
 	for i in range(MAX_ROOMS):
@@ -26,9 +27,9 @@ func add_room(slot_index: int) -> void:
 		
 	# Create a variable that represents a new room scene
 	var room = room_scene.instantiate() as Room
-	room.position = Vector2(slot_index * room.get_width(), 0)
+	room.position = Vector2(slot_index * 200, 0)
 	# Put the rooms under the 'rooms' node
-	$Rooms.add_child(room)
+	$rooms.add_child(room)
 	# Add these rooms to the array created earlier
 	rooms.append(room)
 	
@@ -45,10 +46,13 @@ func remove_room(slot_index: int) -> void:
 
 func reposition_rooms() -> void:
 	for i in range(rooms.size()):
-		rooms[i].position = Vector2(i * rooms[i].get_width(),0)
+		rooms[i].position = Vector2(i * 50,0)
 		
 func setup_portals() -> void:
-	pass
+	var total_width = MAX_ROOMS * $rooms.get_child(0).get_width()
+	$LeftPortal.position = Vector2(0, 0)
+	$RightPortal.position = Vector2(total_width, 0)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
