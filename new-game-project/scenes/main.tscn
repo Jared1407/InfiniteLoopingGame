@@ -7,6 +7,7 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0wfyh")
+metadata/_edit_vertical_guides_ = [-930.0]
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -126,6 +127,8 @@ offset_bottom = 40.0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-43, -503)
 zoom = Vector2(0.65, 0.65)
+
+[node name="SubViewport" type="SubViewport" parent="Camera2D"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("2_tbgi4")
