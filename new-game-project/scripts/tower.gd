@@ -22,5 +22,7 @@ func remove_floor(index: int) -> void:
 
 func _reposition_floors() -> void:
 	for i in range(floors.size()):
-		var h = floors[i].get_node("rooms").get_child(0).get_height()
+		
+		#var h = floors[i].get_node("rooms").get_child(0).get_height()
+		var h = 128
 		floors[i].position = Vector2(0, -i * h)
