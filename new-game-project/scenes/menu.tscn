@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkjvcuhq73mb1"]
+
+[ext_resource type="Texture2D" uid="uid://bwfi5jy5sbr2d" path="res://assets/kenney_ui-pack/PNG/Blue/Default/button_rectangle_border.png" id="1_mhnvy"]
+[ext_resource type="FontFile" uid="uid://dnkvfirvyddxa" path="res://assets/kenney_ui-pack/Font/Kenney Future.ttf" id="2_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://dbbcqtj25cy0m" path="res://assets/kenney_ui-pack/PNG/Blue/Double/check_square_grey_checkmark.png" id="3_g3eks"]
+[ext_resource type="Texture2D" uid="uid://bhf2yhr1pa3bt" path="res://assets/kenney_ui-pack/PNG/Blue/Double/check_square_grey_cross.png" id="4_v86rl"]
+
+[node name="menu" type="Panel"]
+anchors_preset = -1
+anchor_left = -0.511
+anchor_top = -0.579
+anchor_right = -0.511
+anchor_bottom = -0.579
+offset_left = 588.672
+offset_top = 375.192
+offset_right = 588.672
+offset_bottom = 375.192
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Daytime" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Daytime"
+
+[node name="DayList" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/DayList"]
+layout_mode = 2
+texture_normal = ExtResource("1_mhnvy")
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer/VBoxContainer/DayList"]
+layout_mode = 2
+texture_normal = ExtResource("1_mhnvy")
+
+[node name="TextureButton3" type="TextureButton" parent="HBoxContainer/VBoxContainer/DayList"]
+layout_mode = 2
+texture_normal = ExtResource("1_mhnvy")
+
+[node name="Nighttime" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Nighttime"
+
+[node name="NightList" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/NightList"]
+layout_mode = 2
+texture_normal = ExtResource("1_mhnvy")
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer/VBoxContainer/NightList"]
+layout_mode = 2
+texture_normal = ExtResource("1_mhnvy")
+
+[node name="TextureButton3" type="TextureButton" parent="HBoxContainer/VBoxContainer/NightList"]
+layout_mode = 2
+texture_normal = ExtResource("1_mhnvy")
+
+[node name="Cart" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "*TOOL TIP*"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_4ytvr")
+theme_override_font_sizes/normal_font_size = 20
+text = "TIPS ABOUT TOOL"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Checkout" type="Button" parent="HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "CHECKOUT
+"
+icon = ExtResource("3_g3eks")
+
+[node name="Cancel" type="Button" parent="HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "CANCEL"
+icon = ExtResource("4_v86rl")

@@ -29,100 +29,32 @@ text = "Add Floor"
 icon = ExtResource("3_sugp2")
 
 [node name="AddRoom" type="Button" parent="Menus/Buttons"]
-offset_left = -604.0
-offset_top = -824.0
-offset_right = -384.0
-offset_bottom = -688.0
+offset_left = -370.0
+offset_top = -970.0
+offset_right = -150.0
+offset_bottom = -834.0
 action_mode = 0
 text = "Add Room"
 icon = ExtResource("3_sugp2")
 
 [node name="RemoveFloor" type="Button" parent="Menus/Buttons"]
-offset_left = -895.0
-offset_top = -826.0
-offset_right = -649.0
-offset_bottom = -690.0
+offset_left = -136.0
+offset_top = -963.0
+offset_right = 110.0
+offset_bottom = -827.0
 action_mode = 0
 text = "Remove Floor"
 icon = ExtResource("3_sugp2")
 
 [node name="RemoveRoom" type="Button" parent="Menus/Buttons"]
-offset_left = -890.0
-offset_top = -978.0
-offset_right = -619.0
-offset_bottom = -842.0
+offset_left = -884.0
+offset_top = -967.0
+offset_right = -613.0
+offset_bottom = -831.0
 action_mode = 0
 text = "Remove Room
 "
 icon = ExtResource("3_sugp2")
-
-[node name="Panel" type="Panel" parent="Menus"]
-anchors_preset = -1
-anchor_left = -0.4
-anchor_top = -0.6
-anchor_right = -0.4
-anchor_bottom = -0.3
-offset_left = -243.272
-offset_top = -150.192
-offset_right = 356.728
-offset_bottom = 249.808
-
-[node name="UpgradeTitle" type="Label" parent="Menus/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.814
-anchor_top = 0.133
-anchor_right = 0.814
-anchor_bottom = 0.133
-offset_left = -59.604
-offset_top = -24.033
-offset_right = -36.604
-offset_bottom = -1.033
-scale = Vector2(5.18128, 2.07719)
-
-[node name="Cost" type="Label" parent="Menus/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.157
-anchor_top = 0.098
-anchor_right = 0.157
-anchor_bottom = 0.098
-offset_left = -59.302
-offset_top = -11.498
-offset_right = 59.698
-offset_bottom = 11.502
-
-[node name="Buy" type="Button" parent="Menus/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.255
-anchor_top = 0.929
-anchor_right = 0.255
-anchor_bottom = 0.929
-offset_left = -82.928
-offset_top = -33.2056
-offset_right = 83.162
-offset_bottom = 32.7944
-text = "BUY
-"
-
-[node name="Cancel" type="Button" parent="Menus/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -215.0
-offset_top = -75.4
-offset_right = -17.0
-offset_bottom = -6.40002
-text = "CANCEL"
-
-[node name="RoomOptions" type="HBoxContainer" parent="Menus/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-43, -503)
