@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkjvcuhq73mb1"]
 
 [ext_resource type="Texture2D" uid="uid://bwfi5jy5sbr2d" path="res://assets/kenney_ui-pack/PNG/Blue/Default/button_rectangle_border.png" id="1_mhnvy"]
-[ext_resource type="FontFile" uid="uid://dnkvfirvyddxa" path="res://assets/kenney_ui-pack/Font/Kenney Future.ttf" id="2_4ytvr"]
 [ext_resource type="Texture2D" uid="uid://dbbcqtj25cy0m" path="res://assets/kenney_ui-pack/PNG/Blue/Double/check_square_grey_checkmark.png" id="3_g3eks"]
 [ext_resource type="Texture2D" uid="uid://bhf2yhr1pa3bt" path="res://assets/kenney_ui-pack/PNG/Blue/Double/check_square_grey_cross.png" id="4_v86rl"]
+
+[sub_resource type="FontVariation" id="FontVariation_con2f"]
 
 [node name="menu" type="Panel"]
 anchors_preset = -1
@@ -83,9 +84,18 @@ text = "*TOOL TIP*"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_4ytvr")
+theme_override_fonts/normal_font = SubResource("FontVariation_con2f")
 theme_override_font_sizes/normal_font_size = 20
-text = "TIPS ABOUT TOOL"
+text = "TIPS ABOUT TOOL
+bottle rocket
+bronic
+Dolphin
+ff yasir
+I still know
+medrano
+menuetto
+
+"
 fit_content = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
