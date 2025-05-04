@@ -14,42 +14,43 @@ metadata/_edit_vertical_guides_ = [-930.0]
 [node name="TowerBase" type="Node" parent="."]
 
 [node name="tower" parent="TowerBase" instance=ExtResource("1_o5qli")]
+position = Vector2(2, 0)
 
 [node name="Menus" type="Node" parent="."]
 
 [node name="Buttons" type="Node" parent="Menus"]
 
 [node name="AddFloor" type="Button" parent="Menus/Buttons"]
-offset_left = -599.0
+offset_left = -597.0
 offset_top = -970.0
-offset_right = -384.0
+offset_right = -382.0
 offset_bottom = -834.0
 action_mode = 0
 text = "Add Floor"
 icon = ExtResource("3_sugp2")
 
 [node name="AddRoom" type="Button" parent="Menus/Buttons"]
-offset_left = -370.0
+offset_left = -368.0
 offset_top = -970.0
-offset_right = -150.0
+offset_right = -148.0
 offset_bottom = -834.0
 action_mode = 0
 text = "Add Room"
 icon = ExtResource("3_sugp2")
 
 [node name="RemoveFloor" type="Button" parent="Menus/Buttons"]
-offset_left = -136.0
+offset_left = -134.0
 offset_top = -963.0
-offset_right = 110.0
+offset_right = 112.0
 offset_bottom = -827.0
 action_mode = 0
 text = "Remove Floor"
 icon = ExtResource("3_sugp2")
 
 [node name="RemoveRoom" type="Button" parent="Menus/Buttons"]
-offset_left = -884.0
+offset_left = -882.0
 offset_top = -967.0
-offset_right = -613.0
+offset_right = -611.0
 offset_bottom = -831.0
 action_mode = 0
 text = "Remove Room
@@ -57,7 +58,7 @@ text = "Remove Room
 icon = ExtResource("3_sugp2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-43, -503)
+position = Vector2(-41, -503)
 zoom = Vector2(0.65, 0.65)
 
 [node name="SubViewport" type="SubViewport" parent="Camera2D"]

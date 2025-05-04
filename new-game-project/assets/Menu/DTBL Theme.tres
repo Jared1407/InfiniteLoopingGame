@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c5lwe0dhl6abl"]
+
+[ext_resource type="FontFile" uid="uid://dmscbhbkinp21" path="res://assets/Menu/MENUETTO.TTF" id="1_8fc7o"]
+[ext_resource type="StyleBox" uid="uid://dphehqc102my7" path="res://assets/Menu/StyleBox_Menu.tres" id="2_gswjh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fc7o"]
+bg_color = Color(0.521569, 0.4, 0.235294, 0.615686)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.517647, 0.372549, 0.223529, 1)
+
+[resource]
+Button/fonts/font = ExtResource("1_8fc7o")
+Button/styles/normal = ExtResource("2_gswjh")
+Label/font_sizes/font_size = 35
+Label/fonts/font = ExtResource("1_8fc7o")
+Label/styles/normal = ExtResource("2_gswjh")
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_8fc7o")
+RichTextLabel/font_sizes/normal_font_size = 23
+RichTextLabel/fonts/normal_font = ExtResource("1_8fc7o")
+RichTextLabel/styles/normal = ExtResource("2_gswjh")
