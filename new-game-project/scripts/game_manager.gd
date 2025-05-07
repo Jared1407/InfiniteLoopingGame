@@ -2,17 +2,28 @@ extends Node
 
 # Struct for upgrades
 class Upgrade:
-	# Specialized Room:
 	var scene: PackedScene
-	# How much the room Costs
 	var cost: int
 	var name: String
+	
+	func _init(p_scene: PackedScene, p_cost: int, p_name: String) -> void:
+		scene = p_scene
+		cost = p_cost
+		name = p_name
 
 #Possible shop items:
 @export var upgrade_defs = [
-	preload("res://scenes/damage_room.tscn"),
-	preload("res://scenes/slow_room.tscn")
-	]
+	Upgrade.new(
+		preload("res://scenes/damage_room.tscn"),
+		100,
+		"Damage Room"
+	),
+	Upgrade.new(
+		preload("res://scenes/slow_room.tscn"),
+		75,
+		"Slow Room"
+	)
+]
 	
 @export var base_room: PackedScene
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ux6tevstjg7q"]
+[gd_scene load_steps=6 format=3 uid="uid://ux6tevstjg7q"]
 
 [ext_resource type="Script" uid="uid://bq1yrg70syemv" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://do457oug3k5by" path="res://scenes/tower.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://2dwvs7mgd3d0" path="res://scripts/game_manager.gd" id="2_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://b878aoalaeq3g" path="res://icon.svg" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bkjvcuhq73mb1" path="res://scenes/menu.tscn" id="4_menu"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0wfyh")
@@ -56,6 +57,20 @@ action_mode = 0
 text = "Remove Room
 "
 icon = ExtResource("3_sugp2")
+
+[node name="ShopButton" type="Button" parent="Menus/Buttons"]
+offset_left = 150.0
+offset_top = -970.0
+offset_right = 350.0
+offset_bottom = -834.0
+text = "Shop"
+
+[node name="Shop" parent="Menus" instance=ExtResource("4_menu")]
+visible = false
+offset_left = -1438.0
+offset_top = -869.0
+offset_right = -1438.0
+offset_bottom = -869.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-41, -503)
