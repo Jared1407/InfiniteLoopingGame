@@ -1,5 +1,7 @@
 extends Node
 
+const BaseEnemy = preload("res://scripts/base_enemy.gd")
+
 #Temp Testing Buttons:
 @onready var add_room: Button      = $Menus/Buttons/AddRoom
 @onready var remove_room: Button   = $Menus/Buttons/RemoveRoom
@@ -16,6 +18,14 @@ extends Node
 @onready var buy: Button = $Menus/Panel/Buy
 @onready var cancel: Button = $Menus/Panel/Cancel
 @onready var room_options: HBoxContainer = $Menus/Panel/RoomOptions
+
+# Enemy spawning
+@export var enemy_scene: PackedScene = preload("res://scenes/base_enemy.tscn")
+var spawn_timer: Timer
+var wave_timer: Timer
+var current_wave: int = 0
+var enemies_per_wave: int = 5
+var spawn_interval: float = 2.0
 
 #Init Vars for shop:
 var chosen_scene : PackedScene
@@ -37,15 +47,50 @@ func _ready() -> void:
 	
 	# Hide Buttons until the shop "opens"
 	panel.visible = false
-	#show_round_shop()
 	
+	# Setup enemy spawning
+	_setup_enemy_spawning()
+	
+func _setup_enemy_spawning() -> void:
+	spawn_timer = Timer.new()
+	spawn_timer.wait_time = spawn_interval
+	spawn_timer.one_shot = false
+	spawn_timer.timeout.connect(_spawn_enemy)
+	add_child(spawn_timer)
+	
+	wave_timer = Timer.new()
+	wave_timer.wait_time = enemies_per_wave * spawn_interval + 5.0  # Extra time between waves
+	wave_timer.one_shot = true
+	wave_timer.timeout.connect(_start_next_wave)
+	add_child(wave_timer)
+	
+	_start_next_wave()
+
+func _start_next_wave() -> void:
+	current_wave += 1
+	enemies_per_wave = 5 + current_wave  # Increase enemies per wave
+	spawn_timer.start()
+	wave_timer.start()
+
+func _spawn_enemy() -> void:
+	if tower.floors.is_empty():
+		return
+		
+	var enemy = enemy_scene.instantiate() as BaseEnemy
+	var bottom_floor = tower.floors[0]
+	enemy.set_floor(bottom_floor)
+	add_child(enemy)
+	
+	# Stop spawning if we've reached the wave limit
+	if get_tree().get_nodes_in_group("enemies").size() >= enemies_per_wave:
+		spawn_timer.stop()
+
 #Function for end of round:
 func show_round_shop() -> void:
 	var children = room_options.get_children()
 	for i in children:
 		room_options.remove_child(i)
 		
-	
 	panel.visible = true
 	chosen_scene = null
 	chosen_slot = -1
@@ -54,7 +99,6 @@ func show_round_shop() -> void:
 	# For now pick 1 random room scene
 	var pool = get_node("GameManager").upgrade_defs.duplicate()
 	print(pool)
-	
 	
 func _on_cancel_pressed() -> void:
 	pass

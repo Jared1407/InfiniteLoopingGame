@@ -1,13 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4pkvuhkbuntr"]
+[gd_scene load_steps=2 format=3 uid="uid://c8j8u4vq3g5vx"]
 
-[ext_resource type="Script" uid="uid://bxa7dhthvvca6" path="res://scripts/base_enemy.gd" id="1_n1jr3"]
+[ext_resource type="Script" path="res://scripts/base_enemy.gd" id="1_xxxxx"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sw3va"]
-
-[node name="BaseEnemy" type="RigidBody2D"]
-script = ExtResource("1_n1jr3")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="BaseEnemy" type="RigidBody2D" groups=["enemies"]]
+script = ExtResource("1_xxxxx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_sw3va")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
