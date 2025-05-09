@@ -3,6 +3,9 @@ extends Node
 const BaseEnemy = preload("res://scripts/base_enemy.gd")
 const GameManager = preload("res://scripts/game_manager.gd")
 
+#Scrolling Camera
+@onready var pathFollow = $Path2D/PathFollow2D
+
 #Temp Testing Buttons:
 @onready var add_room: Button      = $Menus/Buttons/AddRoom
 @onready var remove_room: Button   = $Menus/Buttons/RemoveRoom
@@ -172,3 +175,11 @@ func _on_add_floor_pressed() -> void:
 
 func _on_remove_floor_pressed() -> void:
 	tower.remove_floor(tower.floors.size() - 1)
+
+#Allow user input of scrolling up and down to change the progress ratio by number
+#New bindings were added in Project > Project Settings > Input Map
+func _input(event):
+	if event.is_action_pressed("mouse_wheel_up"):
+		pathFollow.progress_ratio -= 0.05
+	if event.is_action_pressed("mouse_wheel_down"):
+		pathFollow.progress_ratio += 0.05

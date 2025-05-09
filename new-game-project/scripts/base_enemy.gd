@@ -7,6 +7,7 @@ var current_slow: float = 1.0 # Default 100% speed
 var current_floor: Floor = null
 
 #TODO: Reset speed when entering a portal
+#Note: probs should be reset when exiting a slow type room tho yeah?
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
